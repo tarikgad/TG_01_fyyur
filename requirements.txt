@@ -2,3 +2,4 @@ babel
 python-dateutil<3,>=2.7.0
 flask-moment
 flask-wtf
+enum34
