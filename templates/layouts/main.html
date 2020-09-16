@@ -103,6 +103,23 @@
     <script type="text/javascript" src="/static/js/libs/bootstrap-3.1.1.min.js" defer></script>
     <script type="text/javascript" src="/static/js/plugins.js" defer></script>
 
+    <script>
+        deleteBtns = document.getElementsByClassName('delete_venue');
+        for (let i = 0; i < deleteBtns.length; i++) {
+            const deleteBtn = deleteBtns[i];
+            deleteBtn.onclick = function(e) {
+                const venueId = e.target.dataset.id;
+                fetch('/venues/' + venueId, {
+                        method: 'DELETE'
+                    })
+                    .then(
+                        fetch('/venues', {
+                            method: 'GET'
+                        }));
+            };
+        }
+    </script>
+
 </body>
 
 </html>

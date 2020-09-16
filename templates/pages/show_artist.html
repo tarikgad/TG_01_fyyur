@@ -68,5 +68,10 @@
         {% endfor %}
     </div>
 </section>
+<section>
+    <form class="form" method="get" action="/artists/{{artist.id}}/edit">
+        <input type="submit" value="Edit Artist" class="btn btn-primary btn-lg btn-block">
+    </form>
+</section>
 
 {% endblock %}

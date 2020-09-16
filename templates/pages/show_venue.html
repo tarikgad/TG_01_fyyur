@@ -3,6 +3,7 @@
     <div class="col-sm-6">
         <h1 class="monospace">
             {{ venue.name }}
+            <button class="delete_venue" data-id="{{ venue.id }}">&cross;</button>
         </h1>
         <p class="subtitle">
             ID: {{ venue.id }}
@@ -71,4 +72,10 @@
         {% endfor %}
     </div>
 </section>
+<section>
+    <form class="form" method="get" action="/venues/{{venue.id}}/edit">
+        <input type="submit" value="Edit Venue" class="btn btn-primary btn-lg btn-block">
+    </form>
+</section>
+
 {% endblock %}
